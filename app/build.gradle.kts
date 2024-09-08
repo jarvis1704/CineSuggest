@@ -65,6 +65,8 @@ dependencies {
     //Retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.11.0")
 
     //Coil
     implementation("io.coil-kt:coil-compose:2.4.0")
@@ -88,6 +90,9 @@ dependencies {
     implementation ("androidx.room:room-runtime:$room_version")
     kapt ("androidx.room:room-compiler:$room_version")
     implementation ("androidx.room:room-ktx:2.5.2")
+
+    //system UI controller
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.31.4-beta")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
