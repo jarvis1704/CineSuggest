@@ -10,7 +10,7 @@ data class Page(
 )
 
 val pages= listOf(
-    Page(Title = "Lorem Ipsum1", description = "Lorem Ipsum dolor sit emet", Image= R.drawable.ic_splash),
-    Page(Title = "Lorem Ipsum2", description = "Lorem Ipsum dolor sit emet", Image= R.drawable.ic_splash),
-    Page(Title = "Lorem Ipsum3", description = "Lorem Ipsum dolor sit emet", Image= R.drawable.ic_splash)
+    Page(Title = "Lorem Ipsum1", description = "Lorem Ipsum dolor sit emet", Image= R.drawable.onboardng1),
+    Page(Title = "Lorem Ipsum2", description = "Lorem Ipsum dolor sit emet", Image= R.drawable.onboarding2),
+    Page(Title = "Lorem Ipsum3", description = "Lorem Ipsum dolor sit emet", Image= R.drawable.onboarding3)
 )
