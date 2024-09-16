@@ -91,6 +91,9 @@ dependencies {
     kapt ("androidx.room:room-compiler:$room_version")
     implementation ("androidx.room:room-ktx:2.5.2")
 
+    //extended icons
+    implementation ("androidx.compose.material:material-icons-extended:1.7.1")
+
     //system UI controller
     implementation ("com.google.accompanist:accompanist-systemuicontroller:0.31.4-beta")
 
