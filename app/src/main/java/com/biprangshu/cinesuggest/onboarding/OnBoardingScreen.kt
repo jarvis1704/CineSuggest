@@ -26,6 +26,7 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnBoardingScreen(
+    event: (OnBoardingEvent) -> Unit
 ){
     Column(modifier = Modifier.fillMaxSize().navigationBarsPadding(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center){
         val pagerState= rememberPagerState(initialPage = 0){
@@ -55,7 +56,7 @@ fun OnBoardingScreen(
         OnBoardingButton(text = buttonState.value, onClick = {
             scope.launch{
                 if(pagerState.currentPage==2){
-                    // TODO add event to save app entry
+                    event(OnBoardingEvent.SaveAppEntry)
                 }else{
                     pagerState.animateScrollToPage(page = pagerState.currentPage+1)
                 }
