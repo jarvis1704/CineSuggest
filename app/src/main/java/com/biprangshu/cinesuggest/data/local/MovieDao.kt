@@ -9,9 +9,9 @@ interface MovieDao{
     @Upsert
     suspend fun upsertAll(moviesList: List<MovieEntity>)
 
-    @Query("SELECT * FROM MovieEntity WHERE id= :id")
+    @androidx.room.Query("SELECT * FROM MovieEntity WHERE id = :id")
     suspend fun getMovieById(id: Int): MovieEntity
 
-    @Query("SELECT * FROM MovieEntity WHERE category= :category")
+    @androidx.room.Query("SELECT * FROM MovieEntity WHERE category = :category")
     suspend fun getMovieListByCategory(category: String): List<MovieEntity>
 }
