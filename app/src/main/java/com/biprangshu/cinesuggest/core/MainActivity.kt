@@ -14,6 +14,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -29,8 +30,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            SetBarColor(color = MaterialTheme.colorScheme.inverseOnSurface)
+            SetTransparentStatusBar()
             CineSuggestTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -62,9 +64,19 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun SetBarColor(color: Color){
+private fun SetBarColor(color: Color) {
     val systemUiController = com.google.accompanist.systemuicontroller.rememberSystemUiController()
-    LaunchedEffect(key1=color) {
-        systemUiController.setSystemBarsColor(color)
+    LaunchedEffect(key1 = color) {
+        systemUiController.setSystemBarsColor(
+            color = color,
+            darkIcons = false, // Adjust based on whether you want light or dark icons
+            isNavigationBarContrastEnforced = false
+        )
     }
 }
+
+@Composable
+private fun SetTransparentStatusBar() {
+    SetBarColor(Color.Transparent) // Set the status bar color to transparent
+}
+
