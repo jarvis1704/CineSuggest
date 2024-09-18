@@ -168,11 +168,11 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
         }
 
         Spacer(modifier = Modifier.height(32.dp))
-        Text(text = "Overview", fontSize = 19.sp, fontWeight = FontWeight.SemiBold)
+        Text(text = "Overview", fontSize = 19.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(horizontal = 16.dp))
         Spacer(modifier = Modifier.height(8.dp))
 
         detailsState.movie?.let {
-            Text(text = it.overview, fontSize = 16.sp)
+            Text(text = it.overview, fontSize = 16.sp, modifier = Modifier.padding(horizontal = 16.dp))
         }
 
         Spacer(modifier = Modifier.height(32.dp))
